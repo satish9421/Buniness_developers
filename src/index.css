@@ -33,8 +33,9 @@
   --accent-cyan-soft: rgba(43, 122, 140, 0.12);
   --accent-amber: #d97706;          /* Warm terracotta amber */
   
-  --font-display: 'Syne', sans-serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-editorial: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -84,9 +85,10 @@ body {
 /* Typography styles */
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
   font-weight: 700;
   color: var(--text-primary);
+  text-rendering: optimizeLegibility;
 }
 
 .mono-tag {
@@ -954,4 +956,19 @@ h1, h2, h3, h4, .font-display {
     gap: 1rem;
     text-align: center;
   }
+}
+
+/* Spinner & Form Polish */
+.spin-icon {
+  animation: spinAnim 1s linear infinite;
+}
+
+@keyframes spinAnim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 0 3px rgba(184, 134, 60, 0.15);
 }

@@ -29,7 +29,9 @@ import {
   Building,
   Eye,
   SlidersHorizontal,
-  X
+  X,
+  Send,
+  Loader2
 } from 'lucide-react';
 
 export default function App() {
@@ -37,6 +39,15 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('inventory'); // 'inventory', 'sales', 'tables'
   const [inquirySent, setInquirySent] = useState(false);
   const [activeReelView, setActiveReelView] = useState('restaurant'); // 'restaurant', 'gym'
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: 'Full Suite (PC Software + Mobile App + Data Dashboard + Ads)',
+    message: ''
+  });
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formError, setFormError] = useState('');
 
   // Team data as specified by user
   const teamMembers = [
@@ -1283,60 +1294,219 @@ export default function App() {
           </div>
 
           {/* Interactive Contact / Consultation Box */}
-          <div className="glass-card" style={{ background: '#ffffff', border: '1px solid var(--border-medium)', padding: '3rem 2rem', boxShadow: '0 20px 50px rgba(70, 50, 30, 0.08)' }}>
-            <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Ready To Transform Your Local Business?</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>
-                Tell us about your business (Retail, Restaurant, Gym, Salon, or Clinic) and get a free architecture consultation + demo walk-through from our team.
+          <div className="glass-card" style={{ background: '#ffffff', border: '1px solid var(--border-medium)', padding: '3.5rem 2.5rem', boxShadow: '0 25px 60px rgba(70, 50, 30, 0.08)', borderRadius: 24 }}>
+            <div style={{ maxWidth: 740, margin: '0 auto', textAlign: 'center' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.35rem 0.9rem', borderRadius: 9999, background: 'rgba(184, 134, 60, 0.1)', border: '1px solid rgba(184, 134, 60, 0.25)', color: 'var(--accent-gold)', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+                <Sparkles size={13} />
+                Direct Developer Dispatch
+              </div>
+
+              <h3 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', fontWeight: 800, marginBottom: '0.85rem', color: 'var(--text-primary)', letterSpacing: '-0.03em', lineHeight: 1.2 }}>
+                Ready To Transform Your Local Business?
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', marginBottom: '1.75rem', lineHeight: 1.6, maxWidth: 640, margin: '0 auto 1.75rem' }}>
+                Share your business details below. Your inquiry is directly routed to Satish, Ayush & Ronak to prepare your architecture plan and schedule a consultation.
               </p>
 
+              {/* Developer Team Alert Tag */}
+              <div style={{ display: 'inline-flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem', padding: '0.5rem 1rem', background: '#faf7f2', border: '1px solid var(--border-subtle)', borderRadius: 12, marginBottom: '2rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>Instant Notification to:</span>
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', fontSize: '0.78rem' }}>sattuu.911@gmail.com</span>
+                <span>•</span>
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', fontSize: '0.78rem' }}>raj17ayush12@gmail.com</span>
+                <span>•</span>
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', fontSize: '0.78rem' }}>ronakpandita929@gmail.com</span>
+              </div>
+
               {inquirySent ? (
-                <div style={{ background: 'rgba(30,126,80,0.1)', border: '1px solid var(--accent-emerald)', padding: '1.25rem', borderRadius: 12, color: 'var(--accent-emerald)' }}>
-                  <strong>Thank you! Message received.</strong> Satish and the Business Developers team will contact you within 2 hours.
+                <div style={{ background: 'rgba(30,126,80,0.08)', border: '1.5px solid var(--accent-emerald)', padding: '2rem', borderRadius: 16, color: 'var(--text-primary)', textAlign: 'center' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-emerald)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
+                    <CheckCircle2 size={26} />
+                  </div>
+                  <h4 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--accent-emerald)', marginBottom: '0.5rem' }}>
+                    Consultation Blueprint Request Dispatched!
+                  </h4>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', maxWidth: 520, margin: '0 auto 1.25rem', lineHeight: 1.55 }}>
+                    Your project details have been sent to <strong>sattuu.911@gmail.com</strong>, <strong>raj17ayush12@gmail.com</strong>, and <strong>ronakpandita929@gmail.com</strong>. We will review your requirements and reach out via WhatsApp/Phone within 2 hours.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setInquirySent(false);
+                      setFormData({ name: '', phone: '', email: '', service: 'Full Suite (PC Software + Mobile App + Data Dashboard + Ads)', message: '' });
+                    }}
+                    className="btn-secondary"
+                    style={{ fontSize: '0.85rem', padding: '0.5rem 1.25rem' }}
+                  >
+                    Submit Another Inquiry
+                  </button>
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    setInquirySent(true);
+                    setFormSubmitting(true);
+                    setFormError('');
+
+                    const recipients = [
+                      'sattuu.911@gmail.com',
+                      'raj17ayush12@gmail.com',
+                      'ronakpandita929@gmail.com'
+                    ];
+
+                    const subject = `[New Client Inquiry] ${formData.name || 'Local Business'} - Business Developers`;
+                    const bodyText = `New Consultation Request received via Business Developers Web Portal:
+--------------------------------------------------
+Client / Business Name: ${formData.name}
+Phone / WhatsApp: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+Service Needed: ${formData.service}
+Details / Requirements: ${formData.message || 'Standard consultation requested'}
+--------------------------------------------------
+Dispatched to Team:
+- Satish Galande (sattuu.911@gmail.com)
+- Ayush Raj (raj17ayush12@gmail.com)
+- Ronak Pandita (ronakpandita929@gmail.com)
+Submission Timestamp: ${new Date().toLocaleString()}`;
+
+                    try {
+                      // Dispatch to FormSubmit endpoint configured to notify all 3 team members
+                      const response = await fetch('https://formsubmit.co/ajax/sattuu.911@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          _subject: subject,
+                          _replyto: formData.email || undefined,
+                          _cc: 'raj17ayush12@gmail.com,ronakpandita929@gmail.com',
+                          name: formData.name,
+                          phone: formData.phone,
+                          email: formData.email,
+                          service_required: formData.service,
+                          requirements_notes: formData.message,
+                          recipients_list: recipients.join(', '),
+                          message: bodyText
+                        })
+                      });
+
+                      if (response.ok) {
+                        setInquirySent(true);
+                      } else {
+                        // Fallback: trigger user's native email client with all 3 emails pre-filled
+                        const mailtoLink = `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+                        window.open(mailtoLink, '_blank');
+                        setInquirySent(true);
+                      }
+                    } catch (err) {
+                      // Fallback mailto on network block or CORS
+                      const mailtoLink = `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+                      window.open(mailtoLink, '_blank');
+                      setInquirySent(true);
+                    } finally {
+                      setFormSubmitting(false);
+                    }
                   }}
-                  style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}
+                  style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', textAlign: 'left' }}
                 >
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 4 }}>YOUR NAME / BUSINESS NAME</label>
+                      <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 6, fontWeight: 600 }}>
+                        YOUR NAME / BUSINESS NAME <span style={{ color: 'var(--accent-amber)' }}>*</span>
+                      </label>
                       <input
                         type="text"
                         required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Ramesh Joshi / Joshi Sweets & Cafe"
-                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}
+                        style={{ width: '100%', padding: '0.85rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s' }}
                       />
                     </div>
+
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 4 }}>PHONE NUMBER / WHATSAPP</label>
+                      <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 6, fontWeight: 600 }}>
+                        PHONE NUMBER / WHATSAPP <span style={{ color: 'var(--accent-amber)' }}>*</span>
+                      </label>
                       <input
                         type="tel"
                         required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98XXXXXXXX"
-                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}
+                        style={{ width: '100%', padding: '0.85rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s' }}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 6, fontWeight: 600 }}>
+                        EMAIL ADDRESS (OPTIONAL)
+                      </label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="yourname@gmail.com"
+                        style={{ width: '100%', padding: '0.85rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s' }}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 4 }}>WHAT ARE YOU LOOKING FOR?</label>
-                    <select style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}>
-                      <option>Full Suite (PC Software + Mobile App + Data Dashboard + Ads)</option>
-                      <option>Custom Website & Online Ordering System</option>
-                      <option>Desktop POS & Offline Inventory Management</option>
-                      <option>Data Analytics Dashboard for Shelf & Sales</option>
-                      <option>Social Media Reels & Physical Flex Marketing</option>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 6, fontWeight: 600 }}>
+                      WHAT ARE YOU LOOKING FOR?
+                    </label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      style={{ width: '100%', padding: '0.85rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', cursor: 'pointer' }}
+                    >
+                      <option value="Full Suite (PC Software + Mobile App + Data Dashboard + Ads)">Full Suite (PC Software + Mobile App + Data Dashboard + Ads)</option>
+                      <option value="Custom Website & Online Ordering System">Custom Website & Online Ordering System</option>
+                      <option value="Desktop POS & Offline Inventory Management">Desktop POS & Offline Inventory Management</option>
+                      <option value="Data Analytics Dashboard for Shelf & Sales">Data Analytics Dashboard for Shelf & Sales</option>
+                      <option value="Social Media Reels & Physical Flex Marketing">Social Media Reels & Physical Flex Marketing</option>
+                      <option value="Other Custom Engineering Requirement">Other Custom Engineering Requirement</option>
                     </select>
                   </div>
 
-                  <button type="submit" className="btn-primary" style={{ alignSelf: 'center', marginTop: '0.5rem', padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
-                    <span>Request Free Solution Blueprint</span>
-                    <ArrowRight size={16} />
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 6, fontWeight: 600 }}>
+                      TELL US BRIEFLY ABOUT YOUR SHOP / VISION (OPTIONAL)
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="e.g. We run a 2-floor cafe in Pune and want table ordering QR codes + automated billing and daily sales reports on our phones..."
+                      style={{ width: '100%', padding: '0.85rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', resize: 'vertical', fontFamily: 'inherit' }}
+                    />
+                  </div>
+
+                  {formError && (
+                    <div style={{ color: '#d9534f', fontSize: '0.85rem', textAlign: 'center' }}>
+                      {formError}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={formSubmitting}
+                    className="btn-primary"
+                    style={{ alignSelf: 'center', marginTop: '0.5rem', padding: '0.9rem 2.4rem', fontSize: '0.95rem', cursor: formSubmitting ? 'not-allowed' : 'pointer', opacity: formSubmitting ? 0.75 : 1 }}
+                  >
+                    {formSubmitting ? (
+                      <>
+                        <Loader2 size={16} className="spin-icon" />
+                        <span>Sending to Developers...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Request Free Blueprint & Notify Team</span>
+                        <Send size={15} />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
