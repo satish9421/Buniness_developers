@@ -281,73 +281,73 @@ export default function App() {
             </div>
           </div>
 
-          {/* Interactive Hero Visual */}
-          <div className="hero-preview-window">
-            <div className="window-header">
-              <div className="window-controls">
-                <span className="window-dot red"></span>
-                <span className="window-dot yellow"></span>
-                <span className="window-dot green"></span>
+            {/* Interactive Hero Visual */}
+            <div className="hero-preview-window">
+              <div className="window-header">
+                <div className="window-controls">
+                  <span className="window-dot red"></span>
+                  <span className="window-dot yellow"></span>
+                  <span className="window-dot green"></span>
+                </div>
+                <div className="window-title">business-developers-system://suite-v2.5</div>
+                <div style={{ color: 'var(--accent-emerald)', fontSize: '0.7rem', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600 }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-emerald)' }}></span>
+                  System Live
+                </div>
               </div>
-              <div className="window-title">business-developers-system://suite-v2.5</div>
-              <div style={{ color: 'var(--accent-emerald)', fontSize: '0.7rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-emerald)' }}></span>
-                System Live
+
+              <div style={{ padding: '1.5rem', background: '#ffffff' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+                  <div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>CLIENT SOLUTION WORKFLOW</div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>Smart Vendor OS Integration</div>
+                  </div>
+                  <span className="section-pill emerald" style={{ margin: 0, fontSize: '0.65rem' }}>Active Sync</span>
+                </div>
+
+                {/* Workflow Steps Preview */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div style={{ background: '#faf7f2', padding: '0.9rem', borderRadius: '12px', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(184,134,60,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
+                      <Code size={18} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>1. Custom Software & Apps</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>PC billing POS + Android/iOS customer ordering app</div>
+                    </div>
+                    <CheckCircle2 size={16} color="var(--accent-emerald)" />
+                  </div>
+
+                  <div style={{ background: '#faf7f2', padding: '0.9rem', borderRadius: '12px', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(30,126,80,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-emerald)' }}>
+                      <BarChart3 size={18} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>2. Live Stock & Sales AI Analytics</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Predictive replenishment, shelf tracking & booking tables</div>
+                    </div>
+                    <CheckCircle2 size={16} color="var(--accent-emerald)" />
+                  </div>
+
+                  <div style={{ background: '#faf7f2', padding: '0.9rem', borderRadius: '12px', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(43,122,140,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-cyan)' }}>
+                      <Megaphone size={18} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>3. Social Reels & Physical Flex Banners</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Instagram virality + local flex boards for footfall drive</div>
+                    </div>
+                    <CheckCircle2 size={16} color="var(--accent-emerald)" />
+                  </div>
+                </div>
+
+                {/* Status footer inside visual */}
+                <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                  <span>Engineered by 4 Sinhgad Devs</span>
+                  <span style={{ color: 'var(--accent-gold)', fontWeight: 600 }}>Zero Third-Party Vendor Locks</span>
+                </div>
               </div>
             </div>
-
-            <div style={{ padding: '1.5rem', background: '#0e1017' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-                <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>CLIENT SOLUTION WORKFLOW</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>Smart Vendor OS Integration</div>
-                </div>
-                <span className="section-pill emerald" style={{ margin: 0, fontSize: '0.65rem' }}>Active Sync</span>
-              </div>
-
-              {/* Workflow Steps Preview */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                <div style={{ background: '#161922', padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(226,185,126,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
-                    <Code size={18} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>1. Custom Software & Apps</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>PC billing POS + Android/iOS customer ordering app</div>
-                  </div>
-                  <CheckCircle2 size={16} color="var(--accent-emerald)" />
-                </div>
-
-                <div style={{ background: '#161922', padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(61,214,140,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-emerald)' }}>
-                    <BarChart3 size={18} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>2. Live Stock & Sales AI Analytics</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Predictive replenishment, shelf tracking & booking tables</div>
-                  </div>
-                  <CheckCircle2 size={16} color="var(--accent-emerald)" />
-                </div>
-
-                <div style={{ background: '#161922', padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '8px', background: 'rgba(82,199,217,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-cyan)' }}>
-                    <Megaphone size={18} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>3. Social Reels & Physical Flex Banners</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Instagram virality + local flex boards for footfall drive</div>
-                  </div>
-                  <CheckCircle2 size={16} color="var(--accent-emerald)" />
-                </div>
-              </div>
-
-              {/* Status footer inside visual */}
-              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                <span>Engineered by 4 Sinhgad Devs</span>
-                <span style={{ color: 'var(--accent-gold)' }}>Zero Third-Party Vendor Locks</span>
-              </div>
-            </div>
-          </div>
         </div>
       </header>
 
@@ -455,7 +455,7 @@ export default function App() {
           SECTION 2: Data Analysis & Client Dashboard
           Analyze client's data: Shelf stock, storage, sales, customer bills, tables
           ========================================================================= */}
-      <section id="analytics" className="section-wrapper" style={{ background: '#090a0e' }}>
+      <section id="analytics" className="section-wrapper" style={{ background: '#f5f0e6', borderTop: '1px solid var(--border-subtle)' }}>
         <div className="container">
           <div className="section-pill emerald">Section 02 // Intelligence & Analytics</div>
           <h2 className="section-title">Data Analysis & Live Decision Dashboard</h2>
@@ -470,7 +470,7 @@ export default function App() {
             <div className="dash-topbar">
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <h4 style={{ fontSize: '1.25rem', fontWeight: 700 }}>Client Intelligence Hub</h4>
+                  <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>Client Intelligence Hub</h4>
                   <span className="section-pill emerald" style={{ margin: 0, padding: '0.15rem 0.5rem', fontSize: '0.65rem' }}>Live Simulation</span>
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
@@ -553,9 +553,9 @@ export default function App() {
 
             {/* Dynamic Tab Body */}
             {activeTab === 'inventory' && (
-              <div style={{ background: '#13161f', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
+              <div style={{ background: '#ffffff', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
                 <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Shelf vs Storage Depletion Monitor</span>
+                  <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)' }}>Shelf vs Storage Depletion Monitor</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Updated 3 mins ago</span>
                 </div>
                 <div style={{ overflowX: 'auto' }}>
@@ -593,7 +593,7 @@ export default function App() {
                         <td>2 jars left</td>
                         <td>1 jar in reserve</td>
                         <td>5 jars/day</td>
-                        <td><span className="status-badge low" style={{ color: '#ef4444', borderColor: 'rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.1)' }}>Supplier Order Urgently</span></td>
+                        <td><span className="status-badge low" style={{ color: '#dc2626', borderColor: 'rgba(220,38,38,0.3)', background: 'rgba(220,38,38,0.1)' }}>Supplier Order Urgently</span></td>
                       </tr>
                       <tr>
                         <td style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Artisanal Whole Wheat Bread</td>
@@ -610,9 +610,9 @@ export default function App() {
             )}
 
             {activeTab === 'sales' && (
-              <div style={{ background: '#13161f', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
+              <div style={{ background: '#ffffff', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
                 <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Recent Customer POS Bills & Payment Channels</span>
+                  <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)' }}>Recent Customer POS Bills & Payment Channels</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Auto-sync with cash register</span>
                 </div>
                 <div style={{ overflowX: 'auto' }}>
@@ -659,9 +659,9 @@ export default function App() {
             )}
 
             {activeTab === 'tables' && (
-              <div style={{ background: '#13161f', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
+              <div style={{ background: '#ffffff', borderRadius: '14px', border: '1px solid var(--border-subtle)', overflow: 'hidden' }}>
                 <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Dine-In Table Floor Plan & Booking Details</span>
+                  <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)' }}>Dine-In Table Floor Plan & Booking Details</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--accent-emerald)' }}>Live Reservation Engine</span>
                 </div>
                 <div style={{ overflowX: 'auto' }}>
@@ -696,7 +696,7 @@ export default function App() {
                       <tr>
                         <td style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Table 07 (Central)</td>
                         <td>2 Seater</td>
-                        <td><span className="status-badge optimal" style={{ background: 'rgba(59,130,246,0.1)', color: '#60a5fa', borderColor: 'rgba(59,130,246,0.3)' }}>Available Now</span></td>
+                        <td><span className="status-badge optimal" style={{ background: 'rgba(43,122,140,0.1)', color: 'var(--accent-cyan)', borderColor: 'rgba(43,122,140,0.3)' }}>Available Now</span></td>
                         <td>—</td>
                         <td>Vacant for 12 mins</td>
                         <td>Walk-in open</td>
@@ -910,7 +910,7 @@ export default function App() {
           SECTION (BETWEEN 3 & 4): Demo Websites & Interactive Client UI Showcase
           Gym, Food, Retail/Grocery, Portfolio - Simple live UI to show clients
           ========================================================================= */}
-      <section id="demos" className="section-wrapper" style={{ background: '#090a0f', borderTop: '1px solid var(--border-subtle)' }}>
+      <section id="demos" className="section-wrapper" style={{ background: '#f5f0e6', borderTop: '1px solid var(--border-subtle)' }}>
         <div className="container">
           <div className="section-pill gold">Section 3.5 // Live Demo Showcase</div>
           <h2 className="section-title">Live Website Demos For Our Clients</h2>
@@ -920,7 +920,7 @@ export default function App() {
 
           {/* Interactive Template Selector Bar */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', background: '#12141c', padding: '0.4rem', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', background: '#ffffff', padding: '0.4rem', borderRadius: '14px', border: '1px solid var(--border-medium)', boxShadow: '0 2px 8px rgba(70, 50, 30, 0.04)' }}>
               {demoWebsites.map((d) => (
                 <button
                   key={d.id}
@@ -929,8 +929,8 @@ export default function App() {
                     padding: '0.6rem 1.1rem',
                     borderRadius: '10px',
                     border: activeDemoTab === d.id ? `1px solid ${d.accent}` : '1px solid transparent',
-                    background: activeDemoTab === d.id ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
-                    color: activeDemoTab === d.id ? '#fff' : 'var(--text-secondary)',
+                    background: activeDemoTab === d.id ? 'rgba(184, 134, 60, 0.12)' : 'transparent',
+                    color: activeDemoTab === d.id ? 'var(--text-primary)' : 'var(--text-secondary)',
                     fontWeight: activeDemoTab === d.id ? 700 : 500,
                     fontSize: '0.85rem',
                     cursor: 'pointer',
@@ -985,64 +985,64 @@ export default function App() {
           {(() => {
             const currentDemo = demoWebsites.find(d => d.id === activeDemoTab) || demoWebsites[0];
             return (
-              <div
-                style={{
-                  background: '#10121a',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  boxShadow: '0 30px 70px -20px rgba(0, 0, 0, 0.85)',
+              <div 
+                style={{ 
+                  background: '#ffffff', 
+                  border: '1px solid var(--border-medium)', 
+                  borderRadius: '24px', 
+                  overflow: 'hidden', 
+                  boxShadow: '0 25px 65px -15px rgba(70, 50, 30, 0.12)',
                   maxWidth: demoScreenMode === 'mobile' ? '420px' : '100%',
                   margin: '0 auto',
                   transition: 'all 0.4s ease'
                 }}
               >
                 {/* Browser Top Window Chrome */}
-                <div style={{ background: '#161922', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)' }}>
+                <div style={{ background: '#f7f3ec', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)' }}>
                   <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                     <span className="window-dot red"></span>
                     <span className="window-dot yellow"></span>
                     <span className="window-dot green"></span>
                   </div>
-                  <div style={{ background: '#0e1017', padding: '0.25rem 1.25rem', borderRadius: 999, fontSize: '0.72rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', border: '1px solid rgba(255,255,255,0.05)', maxWidth: '300px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <div style={{ background: '#ffffff', padding: '0.25rem 1.25rem', borderRadius: 999, fontSize: '0.72rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', border: '1px solid var(--border-subtle)', maxWidth: '300px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     https://demo.{currentDemo.id}.businessdevelopers.in/live
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ fontSize: '0.7rem', color: currentDemo.accent, fontWeight: 600 }}>{currentDemo.stats}</span>
+                    <span style={{ fontSize: '0.7rem', color: currentDemo.accent, fontWeight: 700 }}>{currentDemo.stats}</span>
                     <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent-emerald)' }}></span>
                   </div>
                 </div>
 
                 {/* Live Client Website Content Canvas */}
-                <div style={{ padding: demoScreenMode === 'mobile' ? '1.5rem 1rem' : '2.5rem 2rem', background: '#0d0f15', minHeight: '440px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-
+                <div style={{ padding: demoScreenMode === 'mobile' ? '1.5rem 1rem' : '2.5rem 2rem', background: '#fdfbf7', minHeight: '440px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  
                   {/* Mock Site Navbar */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: '2rem' }}>
-                    <div style={{ fontWeight: 800, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', marginBottom: '2rem' }}>
+                    <div style={{ fontWeight: 800, fontSize: '1.1rem', letterSpacing: '-0.02em', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ width: 12, height: 12, borderRadius: 3, background: currentDemo.accent }}></span>
                       {currentDemo.liveUi.navTitle}
                     </div>
                     {demoScreenMode === 'desktop' && (
                       <div style={{ display: 'flex', gap: '1.25rem' }}>
                         {currentDemo.liveUi.navLinks.map((link, lIdx) => (
-                          <span key={lIdx} style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                          <span key={lIdx} style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', cursor: 'pointer', fontWeight: 500 }}>
                             {link}
                           </span>
                         ))}
                       </div>
                     )}
-                    <span style={{ padding: '0.35rem 0.85rem', background: 'rgba(255,255,255,0.06)', borderRadius: 999, fontSize: '0.75rem', color: currentDemo.accent, border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <span style={{ padding: '0.35rem 0.85rem', background: 'rgba(184,134,60,0.1)', borderRadius: 999, fontSize: '0.75rem', color: currentDemo.accent, fontWeight: 600, border: '1px solid rgba(184,134,60,0.2)' }}>
                       Open Now
                     </span>
                   </div>
 
                   {/* Mock Site Hero Section */}
                   <div style={{ marginBottom: '2.5rem' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '0.3rem 0.8rem', borderRadius: 999, background: 'rgba(255,255,255,0.05)', fontSize: '0.72rem', color: currentDemo.accent, marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '0.3rem 0.8rem', borderRadius: 999, background: 'rgba(184,134,60,0.1)', fontSize: '0.72rem', color: currentDemo.accent, marginBottom: '1rem', border: '1px solid rgba(184,134,60,0.25)', fontWeight: 600 }}>
                       <Sparkles size={13} /> {currentDemo.liveUi.badge}
                     </div>
 
-                    <h3 style={{ fontSize: demoScreenMode === 'mobile' ? '1.5rem' : '2.2rem', fontWeight: 800, lineHeight: 1.15, marginBottom: '0.85rem', color: '#fff' }}>
+                    <h3 style={{ fontSize: demoScreenMode === 'mobile' ? '1.5rem' : '2.2rem', fontWeight: 800, lineHeight: 1.15, marginBottom: '0.85rem', color: 'var(--text-primary)' }}>
                       {currentDemo.liveUi.heroHeading}
                     </h3>
 
@@ -1051,34 +1051,36 @@ export default function App() {
                     </p>
 
                     <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                      <button
-                        style={{
-                          padding: '0.65rem 1.4rem',
-                          background: currentDemo.accent,
-                          color: '#0b0c10',
-                          border: 'none',
-                          borderRadius: 999,
-                          fontWeight: 700,
-                          fontSize: '0.85rem',
+                      <button 
+                        style={{ 
+                          padding: '0.65rem 1.4rem', 
+                          background: currentDemo.accent, 
+                          color: '#ffffff', 
+                          border: 'none', 
+                          borderRadius: 999, 
+                          fontWeight: 700, 
+                          fontSize: '0.85rem', 
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: 6
+                          gap: 6,
+                          boxShadow: '0 4px 12px rgba(184,134,60,0.25)'
                         }}
                       >
                         <span>{currentDemo.liveUi.actionBtn}</span>
                         <ArrowRight size={14} />
                       </button>
 
-                      <button
-                        style={{
-                          padding: '0.65rem 1.2rem',
-                          background: 'rgba(255,255,255,0.05)',
-                          color: '#fff',
-                          border: '1px solid var(--border-subtle)',
-                          borderRadius: 999,
-                          fontSize: '0.85rem',
-                          cursor: 'pointer'
+                      <button 
+                        style={{ 
+                          padding: '0.65rem 1.2rem', 
+                          background: '#ffffff', 
+                          color: 'var(--text-primary)', 
+                          border: '1px solid var(--border-medium)', 
+                          borderRadius: 999, 
+                          fontSize: '0.85rem', 
+                          cursor: 'pointer',
+                          fontWeight: 600
                         }}
                       >
                         Explore Catalog
@@ -1089,42 +1091,43 @@ export default function App() {
                   {/* Live Interactive Grid of Cards for Client */}
                   <div style={{ display: 'grid', gridTemplateColumns: demoScreenMode === 'mobile' ? '1fr' : 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
                     {currentDemo.liveUi.quickCards.map((card, cIdx) => (
-                      <div
-                        key={cIdx}
-                        style={{
-                          background: '#141720',
-                          border: '1px solid var(--border-subtle)',
-                          borderRadius: 14,
+                      <div 
+                        key={cIdx} 
+                        style={{ 
+                          background: '#ffffff', 
+                          border: '1px solid var(--border-subtle)', 
+                          borderRadius: 14, 
                           padding: '1.1rem',
                           display: 'flex',
                           flexDirection: 'column',
-                          justifyContent: 'space-between'
+                          justifyContent: 'space-between',
+                          boxShadow: '0 4px 14px rgba(70,50,30,0.04)'
                         }}
                       >
                         <div>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-                            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>{card.title}</span>
-                            <span style={{ fontSize: '0.68rem', padding: '2px 6px', borderRadius: 4, background: 'rgba(255,255,255,0.06)', color: currentDemo.accent }}>
+                            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)' }}>{card.title}</span>
+                            <span style={{ fontSize: '0.68rem', padding: '2px 6px', borderRadius: 4, background: 'rgba(184,134,60,0.1)', color: currentDemo.accent, fontWeight: 600 }}>
                               {card.spots}
                             </span>
                           </div>
                           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{card.time}</div>
                         </div>
 
-                        <div style={{ marginTop: '0.85rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.78rem' }}>
+                        <div style={{ marginTop: '0.85rem', paddingTop: '0.75rem', borderTop: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.78rem' }}>
                           <span style={{ color: 'var(--text-secondary)' }}>{card.trainer}</span>
-                          <span style={{ color: currentDemo.accent, fontWeight: 600 }}>Select →</span>
+                          <span style={{ color: currentDemo.accent, fontWeight: 700 }}>Select →</span>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Pricing / Plan / Booking Tiers Bar */}
-                  <div style={{ background: '#12141d', borderRadius: 16, padding: '1.25rem', border: '1px solid var(--border-subtle)', display: 'grid', gridTemplateColumns: demoScreenMode === 'mobile' ? '1fr' : 'repeat(3, 1fr)', gap: '1rem' }}>
+                  <div style={{ background: '#ffffff', borderRadius: 16, padding: '1.25rem', border: '1px solid var(--border-subtle)', display: 'grid', gridTemplateColumns: demoScreenMode === 'mobile' ? '1fr' : 'repeat(3, 1fr)', gap: '1rem', boxShadow: '0 4px 14px rgba(70,50,30,0.03)' }}>
                     {currentDemo.liveUi.pricingPreview.map((tier, tIdx) => (
-                      <div key={tIdx} style={{ padding: '0.85rem', borderRadius: 10, background: tier.highlight ? 'rgba(226, 185, 126, 0.08)' : 'transparent', border: tier.highlight ? `1px solid ${currentDemo.accent}` : '1px solid transparent' }}>
-                        <div style={{ fontSize: '0.7rem', color: currentDemo.accent, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{tier.tag}</div>
-                        <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff', marginTop: 2 }}>{tier.plan}</div>
+                      <div key={tIdx} style={{ padding: '0.85rem', borderRadius: 10, background: tier.highlight ? 'rgba(184, 134, 60, 0.08)' : '#faf7f2', border: tier.highlight ? `1px solid ${currentDemo.accent}` : '1px solid var(--border-subtle)' }}>
+                        <div style={{ fontSize: '0.7rem', color: currentDemo.accent, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>{tier.tag}</div>
+                        <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: 2 }}>{tier.plan}</div>
                         <div style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', marginTop: 2 }}>{tier.price}</div>
                       </div>
                     ))}
@@ -1133,12 +1136,12 @@ export default function App() {
                 </div>
 
                 {/* Demo Control Info Bar */}
-                <div style={{ background: '#141722', padding: '0.85rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderTop: '1px solid var(--border-subtle)', fontSize: '0.8rem' }}>
+                <div style={{ background: '#f7f3ec', padding: '0.85rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderTop: '1px solid var(--border-subtle)', fontSize: '0.8rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--text-secondary)' }}>
                     <CheckCircle2 size={15} color="var(--accent-emerald)" />
                     <span>Included for client: <strong>{currentDemo.features.join(" • ")}</strong></span>
                   </div>
-                  <div style={{ color: currentDemo.accent, fontWeight: 600 }}>
+                  <div style={{ color: currentDemo.accent, fontWeight: 700 }}>
                     Instant 3-Day Setup Available
                   </div>
                 </div>
@@ -1233,7 +1236,10 @@ export default function App() {
       {/* =========================================================================
           SECTION 5: How We Work With Clients (Process & Contact)
           ========================================================================= */}
-      <section id="contact" className="section-wrapper" style={{ background: '#090a0e', borderTop: '1px solid var(--border-subtle)' }}>
+      {/* =========================================================================
+          SECTION 5: How We Work With Clients (Process & Contact)
+          ========================================================================= */}
+      <section id="contact" className="section-wrapper" style={{ background: '#fbf9f4', borderTop: '1px solid var(--border-subtle)' }}>
         <div className="container">
           <div className="section-pill emerald">Section 05 // Client Engagement Protocol</div>
           <h2 className="section-title">How We Build For Our Clients</h2>
@@ -1245,7 +1251,7 @@ export default function App() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
             <div className="glass-card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '0.5rem' }}>01</div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Shop & Workflow Audit</h4>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Shop & Workflow Audit</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 We visit your business or audit your current workflow — analyzing billing speed, stock tracking pain points, and customer walk-ins.
               </p>
@@ -1253,7 +1259,7 @@ export default function App() {
 
             <div className="glass-card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--accent-emerald)', marginBottom: '0.5rem' }}>02</div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Rapid Prototype & UI</h4>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Rapid Prototype & UI</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 We create a live clickable prototype tailored specifically to your branding and menu/inventory structure within 7 days.
               </p>
@@ -1261,7 +1267,7 @@ export default function App() {
 
             <div className="glass-card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--accent-cyan)', marginBottom: '0.5rem' }}>03</div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>System & Data Setup</h4>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>System & Data Setup</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 We configure the desktop POS/software, publish your mobile app, seed existing inventory data, and calibrate table/stock metrics.
               </p>
@@ -1269,7 +1275,7 @@ export default function App() {
 
             <div className="glass-card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '0.5rem' }}>04</div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Launch Day & Ads Blast</h4>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Launch Day & Ads Blast</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 We deliver physical flex banners for your store entrance and upload viral launch reels on Instagram to announce your new app to Pune.
               </p>
@@ -1277,15 +1283,15 @@ export default function App() {
           </div>
 
           {/* Interactive Contact / Consultation Box */}
-          <div className="glass-card" style={{ background: 'linear-gradient(135deg, #131620 0%, #0d0e14 100%)', border: '1px solid rgba(226, 185, 126, 0.3)', padding: '3rem 2rem' }}>
+          <div className="glass-card" style={{ background: '#ffffff', border: '1px solid var(--border-medium)', padding: '3rem 2rem', boxShadow: '0 20px 50px rgba(70, 50, 30, 0.08)' }}>
             <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready To Transform Your Local Business?</h3>
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Ready To Transform Your Local Business?</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>
                 Tell us about your business (Retail, Restaurant, Gym, Salon, or Clinic) and get a free architecture consultation + demo walk-through from our team.
               </p>
 
               {inquirySent ? (
-                <div style={{ background: 'rgba(61,214,140,0.15)', border: '1px solid var(--accent-emerald)', padding: '1.25rem', borderRadius: 12, color: 'var(--accent-emerald)' }}>
+                <div style={{ background: 'rgba(30,126,80,0.1)', border: '1px solid var(--accent-emerald)', padding: '1.25rem', borderRadius: 12, color: 'var(--accent-emerald)' }}>
                   <strong>Thank you! Message received.</strong> Satish and the Business Developers team will contact you within 2 hours.
                 </div>
               ) : (
@@ -1303,7 +1309,7 @@ export default function App() {
                         type="text"
                         required
                         placeholder="e.g. Ramesh Joshi / Joshi Sweets & Cafe"
-                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#0c0e14', border: '1px solid var(--border-medium)', borderRadius: 10, color: '#fff', fontSize: '0.875rem' }}
+                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}
                       />
                     </div>
                     <div>
@@ -1312,14 +1318,14 @@ export default function App() {
                         type="tel"
                         required
                         placeholder="+91 98XXXXXXXX"
-                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#0c0e14', border: '1px solid var(--border-medium)', borderRadius: 10, color: '#fff', fontSize: '0.875rem' }}
+                        style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label style={{ display: 'block', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: 4 }}>WHAT ARE YOU LOOKING FOR?</label>
-                    <select style={{ width: '100%', padding: '0.8rem 1rem', background: '#0c0e14', border: '1px solid var(--border-medium)', borderRadius: 10, color: '#fff', fontSize: '0.875rem' }}>
+                    <select style={{ width: '100%', padding: '0.8rem 1rem', background: '#faf7f2', border: '1px solid var(--border-medium)', borderRadius: 10, color: 'var(--text-primary)', fontSize: '0.875rem' }}>
                       <option>Full Suite (PC Software + Mobile App + Data Dashboard + Ads)</option>
                       <option>Custom Website & Online Ordering System</option>
                       <option>Desktop POS & Offline Inventory Management</option>
