@@ -985,12 +985,12 @@ export default function App() {
           {(() => {
             const currentDemo = demoWebsites.find(d => d.id === activeDemoTab) || demoWebsites[0];
             return (
-              <div 
-                style={{ 
-                  background: '#10121a', 
-                  border: '1px solid var(--border-medium)', 
-                  borderRadius: '24px', 
-                  overflow: 'hidden', 
+              <div
+                style={{
+                  background: '#10121a',
+                  border: '1px solid var(--border-medium)',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
                   boxShadow: '0 30px 70px -20px rgba(0, 0, 0, 0.85)',
                   maxWidth: demoScreenMode === 'mobile' ? '420px' : '100%',
                   margin: '0 auto',
@@ -1015,7 +1015,7 @@ export default function App() {
 
                 {/* Live Client Website Content Canvas */}
                 <div style={{ padding: demoScreenMode === 'mobile' ? '1.5rem 1rem' : '2.5rem 2rem', background: '#0d0f15', minHeight: '440px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  
+
                   {/* Mock Site Navbar */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: '2rem' }}>
                     <div style={{ fontWeight: 800, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -1051,15 +1051,15 @@ export default function App() {
                     </p>
 
                     <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                      <button 
-                        style={{ 
-                          padding: '0.65rem 1.4rem', 
-                          background: currentDemo.accent, 
-                          color: '#0b0c10', 
-                          border: 'none', 
-                          borderRadius: 999, 
-                          fontWeight: 700, 
-                          fontSize: '0.85rem', 
+                      <button
+                        style={{
+                          padding: '0.65rem 1.4rem',
+                          background: currentDemo.accent,
+                          color: '#0b0c10',
+                          border: 'none',
+                          borderRadius: 999,
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -1070,15 +1070,15 @@ export default function App() {
                         <ArrowRight size={14} />
                       </button>
 
-                      <button 
-                        style={{ 
-                          padding: '0.65rem 1.2rem', 
-                          background: 'rgba(255,255,255,0.05)', 
-                          color: '#fff', 
-                          border: '1px solid var(--border-subtle)', 
-                          borderRadius: 999, 
-                          fontSize: '0.85rem', 
-                          cursor: 'pointer' 
+                      <button
+                        style={{
+                          padding: '0.65rem 1.2rem',
+                          background: 'rgba(255,255,255,0.05)',
+                          color: '#fff',
+                          border: '1px solid var(--border-subtle)',
+                          borderRadius: 999,
+                          fontSize: '0.85rem',
+                          cursor: 'pointer'
                         }}
                       >
                         Explore Catalog
@@ -1089,12 +1089,12 @@ export default function App() {
                   {/* Live Interactive Grid of Cards for Client */}
                   <div style={{ display: 'grid', gridTemplateColumns: demoScreenMode === 'mobile' ? '1fr' : 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
                     {currentDemo.liveUi.quickCards.map((card, cIdx) => (
-                      <div 
-                        key={cIdx} 
-                        style={{ 
-                          background: '#141720', 
-                          border: '1px solid var(--border-subtle)', 
-                          borderRadius: 14, 
+                      <div
+                        key={cIdx}
+                        style={{
+                          background: '#141720',
+                          border: '1px solid var(--border-subtle)',
+                          borderRadius: 14,
                           padding: '1.1rem',
                           display: 'flex',
                           flexDirection: 'column',
@@ -1149,7 +1149,7 @@ export default function App() {
           {/* Quick Clickable Thumbnails for other industries */}
           <div style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
             {demoWebsites.map((d) => (
-              <div 
+              <div
                 key={d.id}
                 onClick={() => setActiveDemoTab(d.id)}
                 style={{
@@ -1375,7 +1375,7 @@ export default function App() {
               <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: '1rem', textTransform: 'uppercase' }}>Direct Contacts</div>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 <li>Lead: Satish Galande (B.Tech CSE)</li>
-                <li>Mobile: Aayush Raj (B.Tech ENTC)</li>
+                <li>Mobile: Ayush Raj (B.Tech ENTC)</li>
                 <li>Cloud: Bijitesh Vishal Singh (B.Tech CSE)</li>
                 <li>Analytics: Ronak Pandita (B.Tech IT)</li>
               </ul>
